@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Kirang+Haerang&family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <title>작업 포트폴리오</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Kirang+Haerang&family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(to bottom, white, rgb(0, 0, 0) 87%);
+        height: 1080px;
+      }
+      .gradient {
+        width: 100%;
+        height: 100%;
+      }
+      .titles {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 1.5rem;
+        font-family: "Nanum Myeongjo", serif;
+      }
+      .maintitles {
+        font-weight: bold;
+      }
+      .subtitles {
+        font-weight: normal;
+        writing-mode: vertical-rl;
+      }
+      #svg-container {
+        position: absolute;
+      }
+      .container {
+        position: relative;
+        display: grid;
+        margin-top: -20%;
+        margin-left: 55%;
+        height: 60vh;
+      }
+      .intention {
+        position: absolute;
+        top: 895px;
+        left: 605px;
+        color: black;
+        font-family: "Nanum Myeongjo", serif;
+      }
+      .item {
+        position: relative;
+        width: 100%;
+      }
+
+      .item .overlay {
+        position: absolute;
+        color: rgb(0, 0, 0);
+        font-size: 3rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="svg-container">
+      <object
+        type="image/svg+xml"
+        data="2.svg"
+        width="907*2-300"
+        height="1049"
+      ></object>
+    </div>
+    <div class="intention">일의의도</div>
+    <div class="titles">
+      <div class="maintitles">일의 의도와 구의 우연을 통해 생겨난 것들</div>
+      <div class="subtitles">
+        Things that created from one intention and nine coincidences
+      </div>
+    </div>
+    <div class="container">
+      <div class="item">
+        <a href="https://yunjicho.github.io/hairzara/">
+          <div class="overlay">자라나라 머리머리_2023</div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://yunjicho.github.io/growup/">
+          <div class="overlay">grow Up!_2023</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="https://yunjicho.github.io/Random-word-extractor/">
+          <div class="overlay">랜덤 단어 추출기_2023</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="https://yunjicho.github.io/One-Moon-and-Five-Peaks/">
+          <div class="overlay">일월오봉도_2023</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="https://yunjicho.github.io/love-begets-love/">
+          <div class="overlay">사랑은_사랑을_2023</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="https://yunjicho.github.io/backtothefuture/">
+          <div class="overlay">BACK TO THE FUTURE_2022</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="https://yunjicho.github.io/sea-and-sky/">
+          <div class="overlay">Click To Feed_2022</div>
+        </a>
+      </div>
+    </div>
+    <script>
+      const intention = document.querySelector(".intention");
+      const container = document.querySelector(".container");
+      const intentionHeight = intention.offsetHeight;
+      const overlays = document.querySelectorAll(".overlay");
+
+      const randomColor = "#" + parseInt(Math.random() * 0xffffff).toString(16);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.backgroundImage = `linear-gradient(to bottom, ${randomColor}, rgb(0, 0, 0) 87%)`;
+      });
+
+      overlays.forEach((overlay) => {
+        overlay.addEventListener("mouseover", function () {
+          overlay.style.color = randomColor;
+          overlay.setAttribute("data-color", randomColor); // 추가
+        });
+        overlay.addEventListener("mouseout", function () {
+          const originalColor = overlay.getAttribute("data-color"); // 추가
+          overlay.style.color = data - color;
+        });
+      });
+
+      window.addEventListener("mousemove", function (e) {
+        const mouseY = e.pageY;
+        const mouseX = e.pageX;
+        console.log(e.pageY);
+        if (mouseY > 300 && mouseX > 500) {
+          intention.style.color = randomColor;
+        } else {
+          intention.style.color = "black";
+        }
+        intention.style.transition = "color 1s ease-out"; // transition 적용
+        intention.style.color = `rgba(0, 0, 0, ${opacity})`;
+      });
+    </script>
+  </body>
+</html>
